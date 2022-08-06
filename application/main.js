@@ -19,7 +19,7 @@
 //     }
 // }
 
-
+document.body.style="text-align:center";
   const getData=(apiLink)=>{
     return myPromise=new Promise((resolve,reject)=>{
         let myRequest=new XMLHttpRequest();
@@ -39,7 +39,8 @@
   };
 
 // getData("https://api.github.com/users/amrelbardini/repos").then((result)=>{console.log(result)});
-
+const styleSpecs1="color:green;margin:10px;background-color:#ccc; font-size:17px; padding:10px;width:400px;text-align:left;margin:auto";
+const styleSpecs2="color:black;margin:10px;background-color:#eee; font-size:17px; padding:10px;width:400px;text-align:left;margin:auto";
 let renderInDom= async(apilink)=>{
   const result= await getData(apiLink).then((result)=>{return result});
   console.log(result);
@@ -50,10 +51,11 @@ let renderInDom= async(apilink)=>{
                 strong.appendChild(repoName);
                 div.appendChild(strong);
                 document.body.appendChild(div);
-                div.setAttribute("style","margin:10px;color:#333;background-color:#ccc; font-size:17px;border-bottom:1px solid #ccc; padding:10px");
+               
+                i%2===0?div.setAttribute('style',styleSpecs1):div.setAttribute('style',styleSpecs2);
             }
 
 
 }
-const apiLink="https://api.github.com/users/amrelbardini/repos";
+const apiLink="https://api.github.com/users/amrelbardini/repos"
 renderInDom(apiLink);
