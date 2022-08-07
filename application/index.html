@@ -7,10 +7,21 @@
     <title>Js Course</title>
     <!--start style files-->
     <link rel="stylesheet" href="main.css">
+    <style>
+        .test-1{
+            margin:20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>My Github Projects</h1>
-    <div class="test-1 test-2"><b> HTTP-Request Results :</b></div>
+    <h1>My Github Repos</h1>
+    <form>
+        <input id="github-username" type="text" name="username" placeholder="Enter github username">
+        <button id="submit" type="submit" name="submit">Get projects</button>
+    </form>
+    <div class="test-1"><b> HTTP-Request Results :</b></div>
+    <div id="render" class="render"></div>
+    
     <!--start script files-->
     <script src="main.js"></script>
 </body>
